@@ -58,6 +58,16 @@ return packer.startup(function(use)
   use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
+  use {
+    'windwp/nvim-ts-autotag',
+    branch = 'main',
+    requires = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = function ()
+      require('nvim-ts-autotag').setup()
+    end
+  }
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
